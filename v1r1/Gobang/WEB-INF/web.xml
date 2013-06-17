@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<web-app>
+       
+	<servlet>
+		<servlet-name>Event</servlet-name>
+		<servlet-class>servlet.EventServer</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>LeaguerInfo</servlet-name>
+		<servlet-class>servlet.LeaguerServer</servlet-class>
+	</servlet>
+	
+	<servlet>
+		<servlet-name>Log</servlet-name>
+		<servlet-class>servlet.LogServer</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Event</servlet-name>
+		<url-pattern>/ajax/event/*</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>LeaguerInfo</servlet-name>
+		<url-pattern>/ajax/leaguerInfo/*</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>Log</servlet-name>
+		<url-pattern>/ajax/log/*</url-pattern>
+	</servlet-mapping>
+	
+	<session-config>
+		<session-timeout>30</session-timeout>
+	</session-config>
+	
+	<listener>
+		<listener-class>servlet.ServletInitial</listener-class>
+	</listener>
+</web-app>
